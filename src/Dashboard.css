@@ -1,0 +1,10 @@
+.dashboard 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard__group 
+{
+    display: flex;
+}

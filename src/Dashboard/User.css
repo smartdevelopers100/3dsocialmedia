@@ -1,0 +1,13 @@
+.user-photo
+{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.user-display-name 
+{
+    font-size: 16px;
+    font-weight: 600;   
+    margin: 0 10px;
+}

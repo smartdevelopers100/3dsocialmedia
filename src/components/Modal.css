@@ -1,0 +1,48 @@
+.modal 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content 
+{
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 10px;
+    overflow: scroll;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content::-webkit-scrollbar
+{
+    display: none;
+}
+
+.modal-close 
+{
+    position: sticky;
+    top: 10px;
+    left: 100%;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    align-self: flex-end;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.13);
+    padding: 5px;
+    z-index: 1001;
+}

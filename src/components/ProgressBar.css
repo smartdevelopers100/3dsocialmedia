@@ -1,0 +1,14 @@
+.progress-bar
+{
+    width: 100%;
+    margin: 5px 0;
+}
+
+.progress-bar-content
+{
+    background-color: rgb(255, 245, 201);
+    font-weight: 600; 
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}

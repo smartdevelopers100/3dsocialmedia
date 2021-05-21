@@ -1,0 +1,99 @@
+.sidebar 
+{
+    display: flex;
+    flex-direction: column;
+    flex: 0.2;
+    width: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+    transition: all 0.2s ease-out;
+}
+
+.sidebar::-webkit-scrollbar 
+{
+    display: none;
+}
+
+.sidebar.active 
+{
+    width: 200px;
+}
+
+.sidebar-wrapper.active
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.sidebar-item 
+{
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar-item:hover 
+{
+    background-color: rgba(240, 235, 235, 0.568);
+}
+
+.sidebar-item.active 
+{
+    background-color: rgb(241, 237, 237);
+}
+
+
+.sidebar-item__title 
+{
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.sidebar-item__icon  
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media screen and (min-width: 576px){
+    .sidebar  
+    {
+        width: 20%;
+        min-width: 200px;
+        position: static;
+        height: calc(100vh - 50px);
+        z-index: 90;
+    }
+
+    .sidebar.active
+    {
+        min-width: 60px;
+        max-width: 60px;
+        width: 60px;
+        align-items: center;
+    }
+    
+    .sidebar-wrapper.active
+    {
+        background-color: white;
+        z-index: 90;
+        position: static;
+    }
+
+    .sidebar.active .sidebar-item__title 
+    {
+        display: none;
+    }
+}
