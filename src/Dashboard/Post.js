@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './Post.css';
 import {useSelector, useDispatch} from 'react-redux';
 import * as postsActionTypes from '../action_types/posts';
@@ -95,8 +95,23 @@ const GetPostModel = ({file}) => {
 }
 
 export const PostScene = ({file}) => {
+
+    const sceneRef = useRef();
+
+    useEffect(() => {
+        return () => {
+            const scene = sceneRef.current;
+            if(scene)
+            {
+                while(scene.children.length > 0){ 
+                    scene.remove(scene.children[0]); 
+                }
+            }
+        }
+    }, []);
+
     return(<div className="post-scene-container">
-            <a-scene embedded cursor="rayOrigin: mouse">
+            <a-scene embedded cursor="rayOrigin: mouse" ref={sceneRef}>
                 <a-assests>
                     <GetPostAsset file={file} />
                     <img src={'play-arrow.jpg'}  id="play_media" alt="Not available" title="Image" />

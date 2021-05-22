@@ -152,7 +152,7 @@ const PostsContent = props => {
             if(entry.isIntersecting)
             {
                 observer.unobserve(entry.target);
-                
+
                 dispatch({
                     type: postsActionTypes.LIST_POSTS_LOADING
                 });
@@ -165,12 +165,12 @@ const PostsContent = props => {
     const observerRef = useRef(new IntersectionObserver(cb));
 
     useEffect(() => {
-        if(lastItem)
+        if(lastItem && posts.data.length > 20)
         {
             const observer = observerRef.current;
             observer.observe(lastItem);
         }
-    }, [lastItem]);
+    }, [lastItem, posts.data.length]);
 
     return (
         <div className="posts-content">

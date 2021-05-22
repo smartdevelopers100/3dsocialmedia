@@ -5,7 +5,7 @@
 
 .post
 {
-    height: calc(100vh - 40px);
+    height: calc(100vh - 50px);
     overflow: scroll;
     scrollbar-width: none;
     padding: 10px;
